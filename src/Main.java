@@ -354,7 +354,6 @@ public class Main {
 
 
 
-  //sa world intelijin commit özelliğini test ediyoruz.
 
 
 
