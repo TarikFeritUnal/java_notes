@@ -191,12 +191,67 @@ public class Main {
             }
 
             // string islemleri
-            String string1 = "Hello World";
-            int k = string1.indexOf(" ");// indexOf komutu parantez icine yazilan degeri bulur stringin kacinci elemani oldugunu yani kacincio index oldugunu bulur ve onu integer olarak tutar
+            String string1 = "Hello_World";
+            int k = string1.indexOf("_");// indexOf komutu parantez icine yazilan degeri bulur stringin kacinci elemani oldugunu yani kacincio index oldugunu bulur ve onu integer olarak tutar
+            int u = string1.lastIndexOf("o"); // lastIndexOf komutu ise parantez içine yazılan değerin en son bulunan indexini tutar yani sondan başlar aramaya.
             System.out.println(str.length());// stringin karakter uzunlugunu yazdirir not:bosluklarida sayar
             String string2 = string1.substring(0); // stringden yeni bir string olusturur .substring den once hangi stringden kopartilicaksa o stringin ismi yazilir parantezin icine yazilan deger hangi indexden sonrasini alacagini belirtir istersek iki index vererek baslanngic ve bitis indexlerini ayarlayabiliriz bu direkt hello world yazdirir eger 1 yazarsak ello world yazdirir yazilan iki degerden 1. olani yazdirir ikinci yazdigimizi almaz
             String string3 = string1.toUpperCase();// bu kod stringin tum harflerini buyuk harfe cevirir LowerCase dersek kucultur
             String string4 = string1.replace("o", "O");// replace kodu parantez icine yazilan ilk harfi ikinci harfe cevirir ne kadar harf varsa hepsini cevirir;
+
+            System.out.println(string4.concat("java")); //.concat metodu stringleri birleştirme anlamına gelir .concatdan önce yazdığımız stringin sonuna ekler.
+
+            System.out.println(string4.startsWith("H")); //.startsWith metodunun çıktısı booleandir çıktı olarak true veya false dir stringin parantez içine yazdığımız harf ile başlayıp başlamadığını kontrol eder.
+            boolean strings = string4.endsWith("e"); //.endsWith metodu da aynı mantıkta çalılşır çıktı olarak true veya false verir.
+            System.out.println(strings); //burada çıktı olarak false verir çünkü string e ile bitmez d ile biter.
+
+            char[] karakterler = new char[5]; //5 elemanlı char tipinde veri tutan bir dizi oluşturduk.
+            string1.getChars(0, 5, karakterler, 0);// .getChars metodu bir stringdeki karakterleri elde etmemizi sağlayan void bir metoddur.
+            //yazdığımız parametrelerin ilk ikisi karakterini almak istediğimiz stringin sınırlarını belirler yani 0. elemandan 5. eleman arasındaki karakterleri alır.üçüncü parametre ise aldığımız karakterleri nereye atamak istiyorsak orayı yazmamız gerekiyor.dördüncü eleman ise atayacağımız yerin hangi indexinden atamaya başlayacağını belirliyoruz.
+
+
+            System.out.println(string1.substring(0)); // .substring metodu stringden bir parça almaya yarar.parantez içine 1 değişken girersek girdiğimiz indexden itibaren alır.
+            System.out.println(string1.substring(0,string1.length()));//parantez içine iki parametre yazarsak hangi indexden hangi indexe parça alacağı yazar.
+
+            //.split metodu
+            String mesaj = "Bugün hava çok güzel";
+
+            for(String kelime : mesaj.split(" ")){ //.split() metodu, String sınıfına ait bir metottur ve bir metni belirli bir ayırıcıya (delimiter) göre parçalayarak String dizisine dönüştürür.
+                System.out.println(kelime);
+            }
+
+            String[] kelimeler = mesaj.split(" ");
+
+            for (String kelime : kelimeler) {
+                System.out.println(kelime);
+            }
+
+
+            String metin = "a-b-c-d";
+            String[] parcalar = metin.split("-", 2); //metoda ikinci bir parametre olarak limit ekleyebiliriz bu ise en fazla kaça böleceğimizi gösterir.
+
+            for (String p : parcalar) {
+                System.out.println(p);
+            }
+             /* çıktı bu şekilde olur;
+              a
+              b-c-d                     */
+
+            System.out.println(string1.toUpperCase());//.toUpperCase metodu ise stringin tüm karakterlerini büyük harfe çevirir.
+            System.out.println(string1.toLowerCase());//.toLowerCase metodu ise stringin tüm karakterlerini küçük harfe çevirir.
+
+            String msj = "     hello world     ";
+            System.out.println(msj.trim());//.trim metodu ise stringin başındaki ve sonundaki boşlukları atmamızı sağlar.
+
+
+
+
+
+
+
+
+
+
 
             if (string1.contains("o")) { // bu kod stringin  icinde varmi yokmuyu kontrol eder bir suru kod var string1. yaparak acilan pencereden tum komutlari gorebilirsin
                 System.out.println("Cumlenin icinde o harfi var.");
