@@ -135,6 +135,7 @@ public class Main {
                 case 1:
                     System.out.println("1");
                     break;
+                case 6: // bu şekilde iki farklı durumda aynı sonucu vermesini sağlayabiliriz.
                 case 2:
                     System.out.println("2");
                     break;
